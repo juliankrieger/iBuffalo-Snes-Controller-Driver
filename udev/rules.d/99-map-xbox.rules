@@ -1,0 +1,2 @@
+KERNEL=="hidraw[0-9]*", SUBSYSTEM=="hidraw", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0583", ATTRS{idProduct}=="2060",  MODE="0666", RUN+="/home/sprawl/.config/snes-controller/controller.sh"
+
