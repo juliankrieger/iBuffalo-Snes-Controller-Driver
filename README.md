@@ -127,12 +127,13 @@ Device Information can be found with "udevadm info -a -p $(udevadm info -q path 
 	    DRIVERS==""
 
 Device udev rules can be created at /etc/udev/rules.d and tested with:
-    udevadm test $(udevadm info -q path -n /dev/hidraw0)
+    udevadm test $(udevadm info -q path -n /dev/hidraw0) , or in your case, the device's name under /dev/
     
     The best values to grab (as in /etc/udev/rules.d/99-snes.rules) are:
     KERNEL=="hidraw[0-9]*", SUBSYSTEM=="hidraw", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0583", ATTRS{idProduct}=="2060"
     
 More Device info:
+
     - Final symlink for usb product is at /dev/snes-controller
     
     - Device event endpoint can be found at /dev/input/event/by-path/pci-0000:00:14.0-usb-0:2:1.0-event-joystick
